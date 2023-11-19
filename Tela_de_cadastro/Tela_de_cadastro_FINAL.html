@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <title>Criar seu Perfil</title>
+</head>
+
+<body>
+    <div id="back"></div>
+    <div class="conteiner">
+        <div class="logo">
+            <img src="IMAGES/Logo CJR.png" alt="Logo CJR" height="300">
+        </div>
+        <div class ="bola">
+            <img src="IMAGES\perfil.svg" alt="Selecione sua Foto de Perfil" id="fotoperfil">
+            <div class="text">
+                <label for="inputfile">Alterar Foto de Perfil</label>
+                <input type="file" accept="image/jpeg, image/png, image/jpg" id="inputfile">
+                <br>
+                <input type="text" id="username" placeholder="Nome de Usuario"><br><br>
+                <input type="email" id="email" placeholder="E-Mail"><br><br>
+                <input type="text" id="genero" placeholder="Genero"><br><br>
+                <input type="password" id="senha" placeholder="Senha"><br><br>
+                <input type="password" id="confirm" placeholder="Confirme a senha"><br><br>
+                <input type="submit" id="enviar"> 
+                <button type="button" id="redirect"> Log in </button>
+            </div>
+        </div>
+    </div>   
+</body>
+
+<script>
+    let profilePic = document.getElementById("fotoperfil");
+    let inputFile = document.getElementById("inputfile");
+
+    inputFile.onchange = function(){
+        profilePic.src = URL.createObjectURL(inputFile.files[0]);
+    }
+</script>
+
+<style>
+    #back {
+        background-color:#002E67;
+        position: absolute;
+        top: -150px;
+        right: -200px;
+        height:900px ;
+        width: 900px ;
+        border-radius: 50%;
+        z-index: -1;
+
+    }
+    .conteiner {
+        display: flex;
+        justify-content: space-around ;
+        align-items: center;
+        height:100vh;
+    }
+
+    body {
+        overflow-x: hidden;
+        overflow-y: hidden;
+        background-color:#ECF3FB;
+        margin: 0;
+        padding: 0;
+    }
+
+    .bola {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 50%;
+        text-align: right;
+    }
+    
+    .text {
+        text-align: center;
+        font-family: "Questrial", sans-serif;
+    }
+
+    .bola img {
+        width: 180px;
+        height: 180px;
+        margin-right: 0px;
+        border-radius: 50%;
+    }
+    label {
+        display: block;
+        width: 200px;
+        background: #73C04A;
+        color: #002E67;
+        padding: 6px;
+        margin: 10px auto;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    #inputfile {display: none;}
+
+    #username {
+        padding: 7px;
+        width: 300px;
+        border: 2px, #73C04A
+    }
+    #email  {
+        padding: 7px;
+        width: 300px;
+    }
+    #genero  {
+        padding: 7px;
+        width: 300px;
+    }
+    #senha  {
+        padding: 7px;
+        width: 300px;
+    }
+    #confirm  {
+        padding: 7px;
+        width: 300px;
+    }
+    #enviar {
+        padding: 10px;
+        width: 100px;
+        background: #73C04A;
+        border: #73C04A;
+        border-radius: 5%;
+    }
+    #redirect{
+        padding: 10px;
+        width: 100px;
+        background: #73C04A;
+        border: #73C04A;
+        border-radius: 5%;
+    }
+
+</style>
