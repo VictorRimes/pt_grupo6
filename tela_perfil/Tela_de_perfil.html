@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+
+<body>
+    <div id="backgroundball"></div>
+    <div id=bar>
+        <button id="cadastro"> Criar Conta </button>
+        <button id="login">Faca login!</button>
+    </div>
+    <div class="conteiner">
+        <div id="banner">
+            <img src="IMAGES/perfil.svg" alt="fotoperfil">
+        </div>
+        <div id="profilebackground">
+            <H1>Descricao do perfil</H1>
+        </div>
+        <div id="feedbackground">
+
+        </div>
+    </div>
+</body>
+
+
+<style>
+    body{
+        overflow-x: hidden;
+        background-color:#ECF3FB;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    #backgroundball{
+        background-color:#002E67;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        height:1200px ;
+        width: 1200px ;
+        border-radius: 50%;
+        z-index: -1;
+    }
+
+    #bar{ display: flex;
+        width: 300px;
+        position: fixed;
+        padding: 10px;
+        right: 0;
+        top: 0;
+        background-color:#73C04A;
+        justify-content:space-around;
+    }
+    #cadastro{
+        background-color: #73C04A;
+        border: #73C04A;
+        padding: 10px;
+        cursor: pointer;
+        color: #ECF3FB;
+        width: 100px;
+    }
+    #login{
+        background-color: #ECF3FB;
+        width: 100px;
+        padding: 10px;
+        cursor: pointer;
+        border: #ECF3FB;
+    }
+    .conteiner{
+        margin: 50px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    #banner{
+        background-color: #001830;
+        width: 600px;
+    }
+    #banner img{
+        background-color:#73C04A;
+        position: relative;
+        top: 50px;
+        left: 20px;
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+    }
+    #profilebackground{
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        width: 600px;
+        height: 200px;
+        border-bottom: 2px;
+        text-align: left;
+        justify-content: center;
+    }
+
+
+</style>
+</html>
