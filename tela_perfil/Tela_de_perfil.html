@@ -21,7 +21,51 @@
             <H1>Descricao do perfil</H1>
         </div>
         <div id="feedbackground">
+            <h2>Publications:</h2>
+            <div id="postbackground">
+                <img src="perfil copy.svg" alt="imagem de perfil" id="postprofilepic">
+                <h2 id="username">Username</h2>
+                <h4>xx/xx/xxxx</h4>
+                <div id="post text">
+                    <p id="texto1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, ipsa ullam sapiente expedita in omnis magnam odio itaque animi totam! Accusantium corporis voluptate ullam, similique inventore sed quidem aspernatur laboriosam!</p>
+                </div>
+                <div id="commentbar">
+                    <button id="Comentarios">Comentarios</button>
+                    <div>
+                        xx/xx/xx
+                    </div>
+                </div>
+            </div>
 
+            <div id="postbackground">
+                <img src="perfil copy.svg" alt="imagem de perfil" id="postprofilepic">
+                <h2 id="username">Username</h2>
+                <h4>xx/xx/xxxx</h4>
+                <div id="post text">
+                    <p id="texto1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, ipsa ullam sapiente expedita in omnis magnam odio itaque animi totam! Accusantium corporis voluptate ullam, similique inventore sed quidem aspernatur laboriosam!</p>
+                </div>
+                <div id="commentbar">
+                    <button id="Comentarios">Comentarios</button>
+                    <div>
+                        xx/xx/xx
+                    </div>
+                </div>
+            </div>
+
+            <div id="postbackground">
+                <img src="perfil copy.svg" alt="imagem de perfil" id="postprofilepic">
+                <h2 id="username">Username</h2>
+                <h4>xx/xx/xxxx</h4>
+                <div id="post text">
+                    <p id="texto1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, ipsa ullam sapiente expedita in omnis magnam odio itaque animi totam! Accusantium corporis voluptate ullam, similique inventore sed quidem aspernatur laboriosam!</p>
+                </div>
+                <div id="commentbar">
+                    <button id="Comentarios">Comentarios</button>
+                    <div>
+                        xx/xx/xx
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </body>
@@ -100,6 +144,48 @@
         border-bottom: 2px;
         text-align: left;
         justify-content: center;
+    }
+    #feedbackground{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        background-color: white;
+        width: 600px;
+        height: 1200px;
+    }
+    #postbackground{ 
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 10px;
+        color:#ECF3FB;
+        background-color: #001830;
+        margin: 10px;
+        padding: 0px;
+    }
+    #postbackground img{
+        position: relative;
+        top: 5px;
+        left: 5px;
+        height: 45px;
+    }
+    #texto1{
+        margin: 10px;
+    }
+    #commentbar{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        background-color: #73C04A;
+        padding: 5px;
+    }
+    #Comentarios{
+        color: white;
+        text-align: left;
+        background-color: #73C04A;
+        border: #73C04A;
+        cursor: pointer;
+        width: 300px;
     }
 
 
