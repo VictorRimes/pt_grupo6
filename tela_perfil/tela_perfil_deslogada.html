@@ -19,10 +19,18 @@
             <img src="IMAGES/perfil.svg" alt="fotoperfil">
         </div>
         <div id="profilebackground">
-            <H1>Descricao do perfil</H1>
+            <h2 id="profileusername">Username (elo/delo)</h2>
+            <div id="empresa">
+                <img src="Icone_empresa.png" alt="incone empresa">
+                <h4>Nome da empresa</h4>
+            </div>
+            <div id="email">
+                <img src="Icone_email.png" alt="incone icone email">
+                <h4>exemplo@cjr.edu.br</h4>
+            </div>
         </div>
         <div id="feedbackground">
-            <h2>Publications:</h2>
+            <h2 id="publi">Publicações:</h2>
             <div id="postbackground">
                 <img src="perfil copy.svg" alt="imagem de perfil" id="postprofilepic">
                 <h2 id="username">Username</h2>
@@ -131,7 +139,7 @@
         flex-direction: column;
     }
     #banner{
-        background-color: #001830;
+        background-color: #234A7B;
         width: 600px;
     }
     #banner img{
@@ -146,7 +154,7 @@
     #profilebackground{
         display: flex;
         flex-direction: column;
-        background-color: white;
+        background-color: #EEF1F8;
         width: 600px;
         height: 200px;
         border-bottom: 2px;
@@ -157,7 +165,7 @@
         display: flex;
         flex-direction: column;
         margin-top: 10px;
-        background-color: white;
+        background-color: #EEF1F8;
         width: 600px;
         height: 1200px;
     }
@@ -166,8 +174,7 @@
         flex-wrap: wrap;
         align-items: baseline;
         gap: 10px;
-        color:#ECF3FB;
-        background-color: #001830;
+        background-color: white;
         margin: 10px;
         padding: 0px;
     }
@@ -194,6 +201,32 @@
         border: #73C04A;
         cursor: pointer;
         width: 300px;
+    }
+    #publi{
+        margin-left: 10px;
+    }
+    #empresa{
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    #email{
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px
+    }
+    #email img{
+        width: 20px;
+        height: 20px;
+    }
+    #empresa img{
+        width: 20px;
+        height: 20px;
+    }
+    #profileusername{
+        align-self:center
     }
 
 
