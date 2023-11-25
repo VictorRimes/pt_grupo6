@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <title>Username's Profile</title>
 </head>
 
 
 <body>
     <div id="backgroundball"></div>
     <div id=bar>
-        <img src="perfil copy.svg" alt="fotoperfil" id="userprofilepic">
-        <button id="userprofile"> Username </button>
-        <button id="logout">Log-out</button>
+        <button id="cadastro"> Criar Conta </button>
+        <button id="login">Faca login!</button>
     </div>
     <div class="conteiner">
         <div id="banner">
-            <img src="IMAGES/perfil.svg" alt="fotoperfil">
+            <img src="perfil copy.svg" alt="fotoperfil">
         </div>
         <div id="profilebackground">
             <h2 id="profileusername">Username (elo/delo)</h2>
@@ -87,6 +89,7 @@
         margin: 0;
         padding: 0;
         width: 100%;
+        font-family: 'Questrial', sans-serif;
     }
 
     #backgroundball{
@@ -108,29 +111,24 @@
         right: 0;
         top: 0;
         background-color:#73C04A;
-        justify-content:left;
+        justify-content:space-around;
     }
-    #bar img{
-        height: 36px;
-    }
-    #userprofile{
+    #cadastro{
         background-color: #73C04A;
         border: #73C04A;
         padding: 10px;
         cursor: pointer;
         color: #ECF3FB;
         width: 100px;
-        text-align: left;
+        font-family: 'Questrial', sans-serif;
     }
-    #logout{
-        position: fixed;
-        right: 10px;
+    #login{
         background-color: #ECF3FB;
-        width: 70px;
+        width: 100px;
         padding: 10px;
         cursor: pointer;
         border: #ECF3FB;
-        
+        font-family: 'Questrial', sans-serif;
     }
     .conteiner{
         margin: 50px;
@@ -159,7 +157,6 @@
         height: 200px;
         border-bottom: 2px;
         text-align: left;
-        justify-content: center;
     }
     #feedbackground{
         display: flex;
@@ -167,7 +164,6 @@
         margin-top: 10px;
         background-color: #EEF1F8;
         width: 600px;
-        height: 1200px;
     }
     #postbackground{ 
         display: flex;
@@ -177,6 +173,7 @@
         background-color: white;
         margin: 10px;
         padding: 0px;
+        
     }
     #postbackground img{
         position: relative;
@@ -201,6 +198,7 @@
         border: #73C04A;
         cursor: pointer;
         width: 300px;
+        font-family: 'Questrial', sans-serif;
     }
     #publi{
         margin-left: 10px;
@@ -228,7 +226,5 @@
     #profileusername{
         align-self:center
     }
-
-
 </style>
 </html>

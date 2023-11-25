@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <title>Username's Profile</title>
 </head>
 
 
 <body>
     <div id="backgroundball"></div>
     <div id=bar>
-        <button id="cadastro"> Criar Conta </button>
-        <button id="login">Faca login!</button>
+        <img src="perfil copy.svg" alt="fotoperfil" id="userprofilepic">
+        <button id="userprofile"> Username </button>
+        <button id="logout">Log-out</button>
     </div>
     <div class="conteiner">
         <div id="banner">
-            <img src="IMAGES/perfil.svg" alt="fotoperfil">
+            <img src="perfil copy.svg" alt="fotoperfil">
         </div>
         <div id="profilebackground">
             <h2 id="profileusername">Username (elo/delo)</h2>
@@ -26,6 +30,9 @@
             <div id="email">
                 <img src="Icone_email.png" alt="incone icone email">
                 <h4>exemplo@cjr.edu.br</h4>
+            <div>
+                <button id="perfiledit">Editar</button>
+            </div>
             </div>
         </div>
         <div id="feedbackground">
@@ -86,6 +93,7 @@
         margin: 0;
         padding: 0;
         width: 100%;
+        font-family: 'Questrial', sans-serif;
     }
 
     #backgroundball{
@@ -107,22 +115,31 @@
         right: 0;
         top: 0;
         background-color:#73C04A;
-        justify-content:space-around;
+        justify-content:left;
+        font-family: 'Questrial', sans-serif;
     }
-    #cadastro{
+    #bar img{
+        height: 36px;
+    }
+    #userprofile{
         background-color: #73C04A;
         border: #73C04A;
         padding: 10px;
         cursor: pointer;
         color: #ECF3FB;
         width: 100px;
+        text-align: left;
+        font-family: 'Questrial', sans-serif;
     }
-    #login{
+    #logout{
+        position: fixed;
+        right: 10px;
         background-color: #ECF3FB;
-        width: 100px;
+        width: 70px;
         padding: 10px;
         cursor: pointer;
         border: #ECF3FB;
+        font-family: 'Questrial', sans-serif;
     }
     .conteiner{
         margin: 50px;
@@ -151,6 +168,8 @@
         height: 200px;
         border-bottom: 2px;
         text-align: left;
+        justify-content: center;
+        font-family: 'Questrial', sans-serif;
     }
     #feedbackground{
         display: flex;
@@ -158,6 +177,7 @@
         margin-top: 10px;
         background-color: #EEF1F8;
         width: 600px;
+        font-family: 'Questrial', sans-serif;
     }
     #postbackground{ 
         display: flex;
@@ -167,7 +187,7 @@
         background-color: white;
         margin: 10px;
         padding: 0px;
-        
+        font-family: 'Questrial', sans-serif;
     }
     #postbackground img{
         position: relative;
@@ -177,6 +197,7 @@
     }
     #texto1{
         margin: 10px;
+        font-family: 'Questrial', sans-serif;
     }
     #commentbar{
         display: flex;
@@ -184,6 +205,7 @@
         width: 100%;
         background-color: #73C04A;
         padding: 5px;
+        font-family: 'Questrial', sans-serif;
     }
     #Comentarios{
         color: white;
@@ -192,21 +214,25 @@
         border: #73C04A;
         cursor: pointer;
         width: 300px;
+        font-family: 'Questrial', sans-serif;
     }
     #publi{
         margin-left: 10px;
+        font-family: 'Questrial', sans-serif;
     }
     #empresa{
         margin-left: 10px;
         display: flex;
         align-items: center;
         gap: 5px;
+        font-family: 'Questrial', sans-serif;
     }
     #email{
         margin-left: 10px;
         display: flex;
         align-items: center;
-        gap: 5px
+        gap: 5px;
+        font-family: 'Questrial', sans-serif;
     }
     #email img{
         width: 20px;
@@ -219,5 +245,22 @@
     #profileusername{
         align-self:center
     }
+    #perfiledit{
+        position: relative;
+        height: 55px;
+        width: 55px;
+        left: 350px;
+        bottom: 5px;
+        padding: 10px;
+        border-radius: 50%;
+        text-align: left;
+        cursor: pointer;
+        background-color: #73C04A;
+        color:#EEF1F8;
+        border: #73C04A;
+        font-family: 'Questrial', sans-serif;
+    }
+
+
 </style>
 </html>
