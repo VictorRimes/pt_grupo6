@@ -86,7 +86,7 @@ body {
     align-items:center;
     gap: 40px;
     align-content: center;
-    margin-top: 60px;
+    margin-top: 30px;
 }
 
 p {
@@ -135,15 +135,16 @@ p {
 
 }
 
-h1.underline{
-    font-size: 25px;
+.underline{
+    font-size: 32px;
     margin-left: 200px;
     color: #002E67;
     border-bottom: 2px solid #002E67;
     padding-bottom: 4px;
     margin-top: 50px;
     margin-left: 400px;
-    width: 720px;
+    width: 650px;
+   
 }
 
 button {
@@ -157,6 +158,19 @@ button {
     border: none;
     cursor: pointer;
     margin-top: 0px;
+    margin-bottom: 0px;
+}
+#cpost {
+    background-color: #002E67;
+    margin-left: 65%;
+    font-size: 15px;
+    height: 40px;
+    width: 100px;
+    font-family: 'Questrial', sans-serif;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
     margin-bottom: 0px;
 }
 
@@ -180,11 +194,11 @@ button {
 
 .cabecinha {
     position: fixed;
-    width: 380px;
+    width: 410px;
     height: 48px;
     background-color: #73C04A;
     top: 0;
-    margin-left: 75%;
+    margin-left: 1130px;
     display: flex;
 }
 
@@ -201,26 +215,23 @@ h3 {
     align-items:center;
     align-content: center;
     margin-top: 50px;
-
-
+    gap: 40px;
 }
 
 .box12 {
     width: 600px;
-    height: 240px;
+    height: auto;
     background-color:white;
-    display: flex;
     flex-direction: column;
 }
 
 .box22 {
-    margin-top: 40px;
     width: 550px;
-    height: 200px;
+    height: auto;
     background-color: white;
     display: flex;
     flex-direction: column;
-   
+    margin-bottom: 10px;
    
 }
 
@@ -237,7 +248,6 @@ h3 {
 
 .usercontainer2 {
     display: flex;
-    align-items: stretch;
 
 }
 
