@@ -108,9 +108,12 @@
             };
     
             const addCommentToFeed = (htmlContent) => {
+                const feedContainer = document.querySelector('.container2');
+                const box12 = document.querySelector('.box12');
+
                 const commentContainer = document.createElement("div");
                 commentContainer.classList.add("box22");
-    
+
                 commentContainer.innerHTML = `
                     <div class="usercontainer2">
                         <img src="./images/R.png"  id="img" alt="imagem de perfil">
@@ -119,9 +122,10 @@
                     </div>
                     <p>${htmlContent}</p>
                 `;
-    
-                feedContainer.insertBefore(commentContainer, feedContainer.firstChild);
+
+                feedContainer.insertBefore(commentContainer, box12.nextSibling);
             };
+
     
             const getCurrentDate = () => {
                 const now = new Date();
