@@ -47,7 +47,7 @@
         </div>
         
         <div class = "box22">
-            <div class = "usercontainer2" id = "commentContainer">
+            <div class = "usercontainer2">
                 <img src="./images/R.png"  id = "img" alt = "imagem de perfil">
                 <h2 id = "user" >USERNAME</h2>
                 <h4 id = "day">19/11/2023</h4>
@@ -57,92 +57,86 @@
             </div>
 
         </div>
-    
+   
+    </div>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-        const createPostButton = document.querySelector(".publi-e-post button");
-        const commentContainer = document.getElementById("commentContainer");
-
-        const openModal = () => {
-            const overlay = document.createElement("div");
-            overlay.classList.add("overlay");
-            document.body.appendChild(overlay);
-
-            const modalContent = document.createElement("div");
-            modalContent.innerHTML = `
-            <div class="modal-header"></div>
-            <textarea id="markdownEditor"></textarea>
-            <div class="botoes">
-                <button id="cancelPost">Cancelar</button>
-                <button id="savePost">Comentar</button>
-            </div>
-            `;
-
-            const modal = document.createElement("div");
-            modal.classList.add("modal");
-            modal.appendChild(modalContent);
-            document.body.appendChild(modal);
-
-            const simplemde = new SimpleMDE({
-            element: document.getElementById("markdownEditor"),
-            spellChecker: false,
-            });
-
-            const closeAndRemove = () => {
-            document.body.removeChild(modal);
-            document.body.removeChild(overlay);
+            const commentButton = document.getElementById("cpost");
+            const feedContainer = document.querySelector(".container2");
+    
+            const openCommentModal = () => {
+                const modalContent = document.createElement("div");
+                modalContent.innerHTML = `
+                    <textarea id="commentEditor"></textarea>
+                    <div class="botoes">
+                        <button id="cancelComment">Cancelar</button>
+                        <button id="submitComment">Comentar</button>
+                    </div>
+                `;
+    
+                const modal = document.createElement("div");
+                modal.classList.add("modal");
+                modal.appendChild(modalContent);
+                document.body.appendChild(modal);
+    
+                const simplemde = new SimpleMDE({
+                    element: document.getElementById("commentEditor"),
+                    spellChecker: false,
+                });
+    
+                const submitCommentButton = document.getElementById("submitComment");
+                const cancelCommentButton = document.getElementById("cancelComment");
+    
+                submitCommentButton.addEventListener("click", () => {
+                    const markdownContent = simplemde.value();
+                    const htmlContent = window.markdownit().render(markdownContent);
+    
+                    addCommentToFeed(htmlContent);
+    
+                    document.body.removeChild(modal);
+                });
+    
+                cancelCommentButton.addEventListener("click", () => {
+                    document.body.removeChild(modal);
+                });
+    
+                const closeModalButton = modal.querySelector('.closeModal');
+                closeModalButton.addEventListener('click', () => {
+                    document.body.removeChild(modal);
+                });
             };
-
-            document.getElementById("savePost").addEventListener("click", () => {
-            const markdownContent = simplemde.value();
-            const htmlContent = window.markdownit().render(markdownContent);
-
-            addCommentToContainer(htmlContent);
-
-            closeAndRemove();
-            });
-
-            document.getElementById("cancelPost").addEventListener("click", closeAndRemove);
-            modal.querySelector('.closeModal').addEventListener('click', closeAndRemove);
-        };
-
-        const addCommentToContainer = (htmlContent) => {
-            const newComment = document.createElement("div");
-            newComment.classList.add("box22");
-
-            newComment.innerHTML = `
-            <div class="usercontainer2">
-                <img src="./images/R.png" id="img" alt="imagem de perfil">
-                <h2 id="user">USERNAME</h2>
-                <h4 id="day">${getCurrentDate()}</h4>
-            </div>
-            <p>${htmlContent}</p>
-           
-            
-            `;
-
-            commentContainer.appendChild(newComment);
-        };
-
-        const getCurrentDate = () => {
-            const now = new Date();
-            const year = now.getFullYear();
-            const month = String(now.getMonth() + 1).padStart(2, '0');
-            const day = String(now.getDate()).padStart(2, '0');
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            
-            return `${day}/${month}/${year} ${hours}:${minutes}`;
-        };
-
-        createPostButton.addEventListener("click", openModal);
+    
+            const addCommentToFeed = (htmlContent) => {
+                const commentContainer = document.createElement("div");
+                commentContainer.classList.add("box22");
+    
+                commentContainer.innerHTML = `
+                    <div class="usercontainer2">
+                        <img src="./images/R.png"  id="img" alt="imagem de perfil">
+                        <h2 id="user">USERNAME</h2>
+                        <h4 id="day">${getCurrentDate()}</h4>
+                    </div>
+                    <p>${htmlContent}</p>
+                `;
+    
+                feedContainer.insertBefore(commentContainer, feedContainer.firstChild);
+            };
+    
+            const getCurrentDate = () => {
+                const now = new Date();
+                const year = now.getFullYear();
+                const month = String(now.getMonth() + 1).padStart(2, '0');
+                const day = String(now.getDate()).padStart(2, '0');
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
+    
+                return `${day}/${month}/${year} ${hours}:${minutes}`;
+            };
+    
+            commentButton.addEventListener("click", openCommentModal);
         });
-
-
-            </script>
-
-        
-
-    </div>
+    </script>
+    
 </body>
 </html>
