@@ -1,0 +1,315 @@
+body {
+    background-color: #eef1f8;
+    font-family: 'Questrial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.retangulo_fundo {
+    position: fixed;
+    width: 780px;
+    height: 7000px;
+    background-color: #eef1f8;
+    z-index: -1; 
+    transform: translate(-50%, -50%);
+    left:50%;
+}
+
+#login {
+    text-decoration: none;
+    float: right;
+    color: #002e67;
+    margin-right: 50px;
+    margin-left: 40px;
+    margin-top: 10px;
+    font-size: 17px;
+
+}
+#criar {
+    text-decoration: none;
+    float: right;
+    margin-right: 65px;
+    color: #E1E8DD;
+    margin-top: 17px;
+    font-size: 17px;
+
+}
+
+.rectangle1 {
+    position: fixed;
+    width: 410px;
+    height: 48px;
+    background-color: #73C04A;
+    top: 20px;
+    margin-left: 87%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.rectangle1 a {
+    margin: 4px;
+}
+
+.botao {
+    background-color: white;
+    padding: 6px 30px;
+
+}
+
+.circle {
+    position: fixed;
+    width: 98%; 
+    height: 130%; 
+    background-color: #002E67; 
+    top:55%;
+    left:50%;
+    border-radius: 50%; 
+    z-index: -1; 
+    transform: translate(-50%, -50%)
+  }
+
+
+.box1 {
+    width: 600px;
+    height: 240px;
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 40px;
+    align-content: center;
+    margin-top: 30px;
+}
+
+p {
+    font-size: 17px;
+    word-wrap: break-word;
+    margin-left: 48px;
+    margin-right: 48px;
+    flex-grow: 1;
+    margin-top: 10px;
+}
+
+.usercontainer {
+    display: flex;
+    align-items: center;
+}
+
+#img {
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+#user {
+    margin-left: 30px;
+    margin-top: 40px;
+    font-size: 18px;
+}
+
+.houranddatecontainer {
+    background-color: #73C04A;
+    padding: 8px;
+    margin-top: 100px;
+    display: flex;
+}
+
+#msn {
+    text-decoration: none;
+    color: black;
+    margin-right: 322px;
+    
+}
+
+#img {
+    width: 55px;
+    height: 55px;
+    margin-left: 20px;
+    margin-top: 20px;
+
+}
+
+.underline{
+    font-size: 32px;
+    margin-left: 200px;
+    color: #002E67;
+    border-bottom: 2px solid #002E67;
+    padding-bottom: 4px;
+    margin-top: 50px;
+    margin-left: 400px;
+    width: 650px;
+   
+}
+
+button {
+    background-color: #73C04A;
+    margin-left: 65%;
+    font-size: 15px;
+    height: 40px;
+    width: 85px;
+    font-family: 'Questrial', sans-serif;
+    color: #E1E8DD;
+    border: none;
+    cursor: pointer;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+#cpost {
+    background-color: #002E67;
+    margin-left: 65%;
+    font-size: 15px;
+    height: 40px;
+    width: 100px;
+    font-family: 'Questrial', sans-serif;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+#picuser {
+    width: 35px;
+    height: 35px;
+    margin-left: 65px;
+    margin-right: 15px;
+    margin-top: 8px;
+    border-radius: 50%;
+
+}
+    
+#exituser {
+    width: 35px;
+    height: 35px;
+    margin-left: 20px;
+    border-radius: 50%;
+    margin-top: 8px;
+}
+
+.cabecinha {
+    position: fixed;
+    width: 410px;
+    height: 48px;
+    background-color: #73C04A;
+    top: 0;
+    margin-left: 1130px;
+    display: flex;
+}
+
+h3 {
+    font-size: 15px;
+    margin-right: 50px;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    align-content: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+
+.box12 {
+    width: 600px;
+    height: auto;
+    background-color:white;
+    flex-direction: column;
+}
+
+.box22 {
+    width: 550px;
+    height: auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+   
+}
+
+#day {
+    display: flex;
+    text-align: left;
+    margin-left: 20px;
+    margin-top: 44px;
+    font-weight: normal;
+    align-items: left;
+    font-size: small;
+
+}
+
+.usercontainer2 {
+    display: flex;
+}
+
+#trash, #trash2 {
+    width: 25px;
+    height: 25px;
+    margin-top: 30px;
+    margin-left: 30%;
+    cursor: pointer;
+}
+
+#edit, #edit2 {
+    width: 30px;
+    height: 30px;
+    margin-top: 30px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.box {
+    width: 600px;
+    height: auto;
+    background-color:white;
+    display: flex;
+    flex-direction: column;
+}
+
+.post-actions {
+    background-color: #73C04A;
+    padding: 8px;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    height: 400px;
+    width: 500px;
+    padding: 50px;
+    border-radius: 2%;
+    max-height: 80%; 
+    overflow-y: auto; 
+    
+}
+
+#cancelPost, #cancelComment, #cancelEdit, #cancelEditPost {
+    background-color: white;
+    margin-right: 5px;
+    color: #73C04A;
+}
+
+#savePost, #submitComment, #submitEdit, #submitEditPost {
+    margin-left: 30px;
+}
+
+.botoes {
+    display: flex;
+}
+
+#trash2 {
+    margin-left: 250px;
+    margin-top: 25px;
+    
+}
+#edit2 {
+    margin-left: 30px;
+}
