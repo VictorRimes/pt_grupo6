@@ -1,64 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel= "icon" href="./images/loguinho.png">
+    <link rel="icon" href="./images/loguinho.png">
     <script src="https://cdn.jsdelivr.net/npm/simplemde@1.11.2/dist/simplemde.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplemde@1.11.2/dist/simplemde.min.css">
     <script src="https://cdn.jsdelivr.net/npm/markdown-it@13.0.2/dist/markdown-it.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@200&family=Questrial&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@200&family=Questrial&display=swap"
+        rel="stylesheet">
     <title>Comentários</title>
 </head>
-<body>
-    <div class = "publi-e-post">
-        <h1 class = "underline">Comentários</h1>
-        <button id = "cpost">Comentar</button>
-    </div>
-    
 
-    <div class = "circle"> </div>
-    <div class = "retangulo_fundo"> </div>
-    <div class = "cabecinha">
+<body>
+    <div class="publi-e-post">
+        <h1 class="underline">Comentários</h1>
+        <button id="cpost">Comentar</button>
+    </div>
+
+    <div class="circle"></div>
+    <div class="retangulo_fundo"></div>
+    <div class="cabecinha">
         <a href="">
-            <img src="./images/R.png" alt="foto user" id = "picuser">
+            <img src="./images/R.png" alt="foto user" id="picuser">
         </a>
         <h3>USERNAME</h3>
         <a href="">
-            <img src = "./images/exit.png" id = "exituser">
+            <img src="./images/exit.png" id="exituser">
         </a>
     </div>
-        
 
     <div class="container2">
-        <div class = "box12">
-            <div class = "usercontainer2">
-                <img src="./images/R.png"  id = "img" alt = "imagem de perfil">
-                <h2 id = "user" >USERNAME</h2>
-                <h4 id = "day">19/11/2023</h4>
-                <img src = "./images/vector-pencil-line-black-icon-removebg-preview (1).png" id = "edit" class = "editButton">
-                <img src = "./images/OIP__1_-removebg-preview.png" id="trash" class="removeButton">
-               
+        <div class="box12">
+            <div class="usercontainer2">
+                <img src="./images/R.png" id="img" alt="imagem de perfil">
+                <h2 id="user">USERNAME</h2>
+                <h4 id="day">19/11/2023</h4>
+                <img src="./images/vector-pencil-line-black-icon-removebg-preview (1).png" id="edit"
+                    class="editButton">
+                <img src="./images/OIP__1_-removebg-preview.png" id="trash" class="removeButton">
             </div>
             <p>texto</p>
         </div>
-        
-        <div class = "box22">
-            <div class = "usercontainer2">
-                <img src="./images/R.png"  id = "img" alt = "imagem de perfil">
-                <h2 id = "user" >USERNAME</h2>
-                <h4 id = "day">19/11/2023</h4>
-                <img src = "./images/OIP__1_-removebg-preview.png" id="trash" class="removeButton">
+
+        <div class="box22">
+            <div class="usercontainer2">
+                <img src="./images/R.png" id="img" alt="imagem de perfil">
+                <h2 id="user">USERNAME</h2>
+                <h4 id="day">19/11/2023</h4>
+                <img src="./images/OIP__1_-removebg-preview.png" id="trash" class="removeButton">
             </div>
             <p>texto</p>
-
-            </div>
-
         </div>
-   
     </div>
 
     <script>
@@ -70,49 +67,49 @@
                 element: document.getElementById("commentEditor"),
                 spellChecker: false,
             });
-    
+
             const openCommentModal = () => {
                 const modalContent = document.createElement("div");
                 modalContent.innerHTML = `
                     <textarea id="commentEditor"></textarea>
                     <div class="botoes">
-                        <button id="cancelComment">Cancelar</button>
+                        <button id="cancelComment" class="closeModal">Cancelar</button>
                         <button id="submitComment">Comentar</button>
                     </div>
                 `;
-    
+
                 const modal = document.createElement("div");
                 modal.classList.add("modal");
                 modal.appendChild(modalContent);
                 document.body.appendChild(modal);
-    
+
                 const simplemde = new SimpleMDE({
                     element: document.getElementById("commentEditor"),
                     spellChecker: false,
                 });
-    
+
                 const submitCommentButton = document.getElementById("submitComment");
                 const cancelCommentButton = document.getElementById("cancelComment");
-    
+
                 submitCommentButton.addEventListener("click", () => {
                     const markdownContent = simplemde.value();
                     const htmlContent = window.markdownit().render(markdownContent);
-    
+
                     addCommentToFeed(htmlContent);
-    
+
                     document.body.removeChild(modal);
                 });
-    
+
                 cancelCommentButton.addEventListener("click", () => {
                     document.body.removeChild(modal);
                 });
-    
+
                 const closeModalButton = modal.querySelector('.closeModal');
                 closeModalButton.addEventListener('click', () => {
                     document.body.removeChild(modal);
                 });
             };
-    
+
             const addCommentToFeed = (htmlContent) => {
                 const feedContainer = document.querySelector('.container2');
                 const box12 = document.querySelector('.box12');
@@ -125,7 +122,7 @@
                         <img src="./images/R.png"  id="img" alt="imagem de perfil">
                         <h2 id="user">USERNAME</h2>
                         <h4 id="day">${getCurrentDate()}</h4>
-                        <img src = "./images/OIP__1_-removebg-preview.png" id="trash" class="removeButton" alt="Remover" title="Remover">
+                        <img src="./images/OIP__1_-removebg-preview.png" id="trash" class="removeButton" alt="Remover" title="Remover">
                     </div>
                     <p>${htmlContent}</p>
                 `;
@@ -133,7 +130,6 @@
                 feedContainer.insertBefore(commentContainer, box12.nextSibling);
             };
 
-    
             const getCurrentDate = () => {
                 const now = new Date();
                 const year = now.getFullYear();
@@ -141,15 +137,14 @@
                 const day = String(now.getDate()).padStart(2, '0');
                 const hours = String(now.getHours()).padStart(2, '0');
                 const minutes = String(now.getMinutes()).padStart(2, '0');
-    
+
                 return `${day}/${month}/${year} ${hours}:${minutes}`;
             };
-    
+
             commentButton.addEventListener("click", openCommentModal);
         });
-        document.addEventListener("DOMContentLoaded", function () {
-    
 
+        document.addEventListener("DOMContentLoaded", function () {
             const feedContainer = document.querySelector('.container2');
 
             feedContainer.addEventListener('click', function (event) {
@@ -158,71 +153,79 @@
                     handleRemoveClick(target.closest('.box22'));
                 }
             });
+
             function handleRemoveClick(box) {
-                console.log('Remover conteúdo:', box.querySelector('p').innerText);
-                box.remove(); 
+                const postContent = box.querySelector('p').innerText;
+                const userConfirmation = window.confirm(`Tem certeza que deseja remover o comentário?`);
+
+                if (userConfirmation) {
+                    box.remove();
+                }
             }
-});
-document.addEventListener("DOMContentLoaded", function () {
-    const feedContainer = document.querySelector('.container2');
+        });
 
-    feedContainer.addEventListener('click', function (event) {
-        const target = event.target;
+        document.addEventListener("DOMContentLoaded", function () {
+            const feedContainer = document.querySelector('.container2');
 
-        if (target.classList.contains('editButton')) {
-            handleEditClick(target.closest('.box12'));
-        }
+            feedContainer.addEventListener('click', function (event) {
+                const target = event.target;
 
-        if (target.classList.contains('removeButton')) {
-            handleRemoveClick(target.closest('.box12'));
-        }
+                if (target.classList.contains('editButton')) {
+                    handleEditClick(target.closest('.box12'));
+                }
 
-    
-    });
-    function handleEditClick(box) {
-    const modalContent = document.createElement("div");
-    modalContent.innerHTML = `
-        <textarea id="editEditor">${box.querySelector('p').innerText}</textarea>
-        <div class="botoes">
-            <button id="cancelEdit">Cancelar</button>
-            <button id="submitEdit">Salvar</button>
-        </div>
-    `;
+                if (target.classList.contains('removeButton')) {
+                    handleRemoveClick(target.closest('.box12'));
+                }
+            });
 
-    const modal = document.createElement("div");
-    modal.classList.add("modal");
-    modal.appendChild(modalContent);
-    document.body.appendChild(modal);
-    
-    const editEditor = document.getElementById("editEditor");
-    const cancelEditButton = document.getElementById("cancelEdit");
-    const submitEditButton = document.getElementById("submitEdit");
+            function handleEditClick(box) {
+                const modalContent = document.createElement("div");
+                modalContent.innerHTML = `
+                    <textarea id="editEditor">${box.querySelector('p').innerText}</textarea>
+                    <div class="botoes">
+                        <button id="cancelEdit">Cancelar</button>
+                        <button id="submitEdit">Salvar</button>
+                    </div>
+                `;
 
-    const simplemde = new SimpleMDE({
-        element: editEditor,
-        spellChecker: false,
-    });
+                const modal = document.createElement("div");
+                modal.classList.add("modal");
+                modal.appendChild(modalContent);
+                document.body.appendChild(modal);
 
-    submitEditButton.addEventListener("click", () => {
-        const editedContent = simplemde.value();
-        box.querySelector('p').innerHTML = editedContent; 
+                const editEditor = document.getElementById("editEditor");
+                const cancelEditButton = document.getElementById("cancelEdit");
+                const submitEditButton = document.getElementById("submitEdit");
 
-        document.body.removeChild(modal);
-    });
+                const simplemde = new SimpleMDE({
+                    element: editEditor,
+                    spellChecker: false,
+                });
 
-    cancelEditButton.addEventListener("click", () => {
-        document.body.removeChild(modal);
-    });
-}
+                submitEditButton.addEventListener("click", () => {
+                    const editedContent = simplemde.value();
+                    box.querySelector('p').innerHTML = editedContent;
 
-function handleRemoveClick(box) {
-    console.log('Remover conteúdo:', box.querySelector('p').innerHTML);
-    box.remove();
-}
+                    document.body.removeChild(modal);
+                });
 
-});
+                cancelEditButton.addEventListener("click", () => {
+                    document.body.removeChild(modal);
+                });
+            }
 
+            function handleRemoveClick(box) {
+                const postContent = box.querySelector('p').innerHTML;
+                const userConfirmation = window.confirm(`Tem certeza que deseja remover o post?`);
+
+                if (userConfirmation) {
+                    box.remove();
+                }
+            }
+        });
     </script>
-    
+
 </body>
+
 </html>

@@ -1,198 +1,180 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@200&family=Questrial&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Poppins:wght@200&family=Questrial&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/simplemde@1.11.2/dist/simplemde.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplemde@1.11.2/dist/simplemde.min.css">
     <script src="https://cdn.jsdelivr.net/npm/markdown-it@13.0.2/dist/markdown-it.min.js"></script>
-    <link rel= "icon" href="./images/loguinho.png">
+    <link rel="icon" href="./images/loguinho.png">
     <title>C</title>
 </head>
+
 <body>
 
-    <div class = "publi-e-post">
-        <h1 class = "underline">Publicações</h1>
-        <button id = "cpost">Criar Post</button>
+    <div class="publi-e-post">
+        <h1 class="underline">Publicações</h1>
+        <button id="cpost">Criar Post</button>
     </div>
-    
 
-    <div class = "circle"> </div>
-    <div class = "retangulo_fundo"> </div>
-    <div class = "cabecinha">
+    <div class="circle"></div>
+    <div class="retangulo_fundo"></div>
+    <div class="cabecinha">
         <a href="">
-            <img src="./images/R.png" alt="foto user" id = "picuser">
+            <img src="./images/R.png" alt="foto user" id="picuser">
         </a>
         <h3>USERNAME</h3>
         <a href="">
-            <img src = "./images/exit.png" id = "exituser">
+            <img src="./images/exit.png" id="exituser">
         </a>
     </div>
     <div class="container">
-        <div class = "box1">
-            <div class = "usercontainer">
-                <img src="./images/R.png"  id = "img" alt = "imagem de perfil">
-                <h2 id = "user" >USERNAME</h2>
-                <img src = "./images/vector-pencil-line-black-icon-removebg-preview (1).png" id = "edit2">
-                <img src = "./images/OIP__1_-removebg-preview.png" id="trash2" class="removeButton">
-            </div>
-            <p>texto</p>
-            <div class = "houranddatecontainer">
-                <a href="./comentarioslog.html" id = "msn">exibir comentários</a>
-                <time class="post-date" datetime="2023-11-16T12:00:00">16/11/2023</time>
-
-            </div>
+        
+    </div>
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-        const createPostButton = document.querySelector(".publi-e-post button");
-        const feedContainer = document.querySelector(".container");
+            const createPostButton = document.querySelector(".publi-e-post button");
+            const feedContainer = document.querySelector(".container");
 
-        const openModal = () => {
-            const modalContent = document.createElement("div");
-            modalContent.innerHTML = `
-            <textarea id="markdownEditor"></textarea>
-            <div class="botoes">
-            <button id="cancelPost">Cancelar</button>
-            <button id="savePost">Publicar</button>
-            
-            </div>
-        `;
+            const openModal = () => {
+                const modalContent = document.createElement("div");
+                modalContent.innerHTML = `
+                    <textarea id="markdownEditor"></textarea>
+                    <div class="botoes">
+                        <button id="cancelPost" class="closeModal">Cancelar</button>
+                        <button id="savePost">Publicar</button>
+                    </div>
+                `;
 
-        const modal = document.createElement("div");
-        modal.classList.add("modal");
-        modal.appendChild(modalContent);
-        document.body.appendChild(modal);
+                const modal = document.createElement("div");
+                modal.classList.add("modal");
+                modal.appendChild(modalContent);
+                document.body.appendChild(modal);
 
-        const simplemde = new SimpleMDE({
-            element: document.getElementById("markdownEditor"),
-            spellChecker: false,
-        });
+                const simplemde = new SimpleMDE({
+                    element: document.getElementById("markdownEditor"),
+                    spellChecker: false,
+                });
 
-        const savePostButton = document.getElementById("savePost");
-        const cancelPostButton = document.getElementById("cancelPost");
+                const savePostButton = document.getElementById("savePost");
+                const cancelPostButton = document.getElementById("cancelPost");
 
-        savePostButton.addEventListener("click", () => {
-            const markdownContent = simplemde.value();
-            const htmlContent = window.markdownit().render(markdownContent);
+                savePostButton.addEventListener("click", () => {
+                    const markdownContent = simplemde.value();
+                    const htmlContent = window.markdownit().render(markdownContent);
 
-            addPostToFeed(htmlContent);
+                    addPostToFeed(htmlContent);
 
-            document.body.removeChild(modal);
-        });
+                    document.body.removeChild(modal);
+                });
 
-        cancelPostButton.addEventListener("click", () => {
-            document.body.removeChild(modal);
-        });
+                cancelPostButton.addEventListener("click", () => {
+                    document.body.removeChild(modal);
+                });
+            };
 
-        const closeModalButton = modal.querySelector('.closeModal');
-        closeModalButton.addEventListener('click', () => {
-            document.body.removeChild(modal);
-            });
-        };
+            const addPostToFeed = (htmlContent) => {
+                const postContainer = document.createElement("div");
+                postContainer.classList.add("box", "box1");
 
-        const addPostToFeed = (htmlContent) => {
-            const postContainer = document.createElement("div");
-            postContainer.classList.add("box");
-            
-            postContainer.innerHTML = `
-            <div class="post-header">
-            <div class="usercontainer">
+                postContainer.innerHTML = `
+                <div class="post-header">
+                <div class="usercontainer">
                 <img src="./images/R.png" id="img" alt="imagem de perfil">
-                <h2 id="user">USERNAME</h2>
-                <img src = "./images/vector-pencil-line-black-icon-removebg-preview (1).png" id = "edit2">
-                <img src = "./images/OIP__1_-removebg-preview.png" id="trash2" class="removeButton">
+                    <h2 id="user">USERNAME</h2>
+                    <img src = "./images/vector-pencil-line-black-icon-removebg-preview (1).png" id = "edit2">
+                    <img src = "./images/OIP__1_-removebg-preview.png" id="trash2" class="removeButton">
+                </div>
             </div>
-            </div>
-            <div class="post-content">${htmlContent}</div>
-            <div class="post-actions">
-            <a href="#" class="msn" id = "msn">exibir comentários</a>
-            <time class="post-date" datetime="${getCurrentDate()}">${getCurrentDate()}</time>
-            </div>
-        `;
+                <div class="post-content">${htmlContent}</div>
+                <div class="post-actions">
+                    <a href="#" class="msn" id = "msn">exibir comentários</a>
+                    <time class="post-date" datetime="${getCurrentDate()}">${getCurrentDate()}</time>
+                </div>
+                `;
 
-            
-            feedContainer.insertBefore(postContainer, feedContainer.firstChild);
-        };
+                feedContainer.insertBefore(postContainer, feedContainer.firstChild);
+            };
 
-        const getCurrentDate = () => {
-            const now = new Date();
-            const year = now.getFullYear();
-            const month = String(now.getMonth() + 1).padStart(2, '0');
-            const day = String(now.getDate()).padStart(2, '0');
-            const hours = String(now.getHours()).padStart(2, '0');
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            
-            return `${day}/${month}/${year} ${hours}:${minutes}`;
-        };
+            const getCurrentDate = () => {
+                const now = new Date();
+                const year = now.getFullYear();
+                const month = String(now.getMonth() + 1).padStart(2, '0');
+                const day = String(now.getDate()).padStart(2, '0');
+                const hours = String(now.getHours()).padStart(2, '0');
+                const minutes = String(now.getMinutes()).padStart(2, '0');
 
-        createPostButton.addEventListener("click", openModal);
+                return `${day}/${month}/${year} ${hours}:${minutes}`;
+            };
+
+            createPostButton.addEventListener("click", openModal);
+
+            feedContainer.addEventListener('click', function (event) {
+                const target = event.target;
+
+                if (target.id === 'edit2') {
+                    handleEditPostClick(target.closest('.box1'));
+                }
+
+                if (target.id === 'trash2') {
+                    handleRemovePostClick(target.closest('.box1'));
+                }
+            });
+
+            function handleEditPostClick(box) {
+                const modalContent = document.createElement("div");
+                modalContent.innerHTML = `
+                    <textarea id="editPostEditor">${box.querySelector('p').innerHTML}</textarea>
+                    <div class="botoes">
+                        <button id="cancelEditPost" class="closeModal">Cancelar</button>
+                        <button id="submitEditPost">Salvar</button>
+                    </div>
+                `;
+
+                const modal = document.createElement("div");
+                modal.classList.add("modal");
+                modal.appendChild(modalContent);
+                document.body.appendChild(modal);
+
+                const editPostEditor = document.getElementById("editPostEditor");
+                const cancelEditPostButton = document.getElementById("cancelEditPost");
+                const submitEditPostButton = document.getElementById("submitEditPost");
+
+                const simplemde = new SimpleMDE({
+                    element: editPostEditor,
+                    spellChecker: false,
+                });
+
+                submitEditPostButton.addEventListener("click", () => {
+                    const editedContent = simplemde.value();
+                    box.querySelector('p').innerHTML = editedContent;
+
+                    document.body.removeChild(modal);
+                });
+
+                cancelEditPostButton.addEventListener("click", () => {
+                    document.body.removeChild(modal);
+                });
+            }
+
+            function handleRemovePostClick(box) {
+            const postContent = box.querySelector('p').innerHTML;
+            const userConfirmation = window.confirm(`Tem certeza que deseja remover o post?`);
+
+            if (userConfirmation) {
+                box.remove();
+            }
+}
         });
+    </script>
 
-        document.addEventListener("DOMContentLoaded", function () {
-    const feedContainer = document.querySelector('.container');
-
-    feedContainer.addEventListener('click', function (event) {
-        const target = event.target;
-
-        if (target.id === 'edit2') {
-            handleEditPostClick(target.closest('.box1'));
-        }
-
-        if (target.id === 'trash2') {
-            handleRemovePostClick(target.closest('.box1'));
-        }
-    });
-
-    function handleEditPostClick(box) {
-        const modalContent = document.createElement("div");
-        modalContent.innerHTML = `
-            <textarea id="editPostEditor">${box.querySelector('p').innerHTML}</textarea>
-            <div class="botoes">
-                <button id="cancelEditPost">Cancelar</button>
-                <button id="submitEditPost">Salvar</button>
-            </div>
-        `;
-
-        const modal = document.createElement("div");
-        modal.classList.add("modal");
-        modal.appendChild(modalContent);
-        document.body.appendChild(modal);
-
-        const editPostEditor = document.getElementById("editPostEditor");
-        const cancelEditPostButton = document.getElementById("cancelEditPost");
-        const submitEditPostButton = document.getElementById("submitEditPost");
-
-        const simplemde = new SimpleMDE({
-            element: editPostEditor,
-            spellChecker: false,
-        });
-
-        submitEditPostButton.addEventListener("click", () => {
-            const editedContent = simplemde.value();
-            box.querySelector('p').innerHTML = editedContent;
-
-            document.body.removeChild(modal);
-        });
-
-        cancelEditPostButton.addEventListener("click", () => {
-            document.body.removeChild(modal);
-        });
-    }
-
-    function handleRemovePostClick(box) {
-        console.log('Remover conteúdo:', box.querySelector('p').innerHTML);
-        box.remove();
-    }
-});
-
-
-            </script>
-        
-    
 </body>
+
 </html>
