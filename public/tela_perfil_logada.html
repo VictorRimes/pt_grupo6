@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel= "icon" href="../assets/loguinho.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <title>Perfil do Usuário</title>
+</head>
+
+
+<body>
+    <div id="backgroundball"></div>
+    <div id=bar>
+        <a href="./tela_perfil_logada.html"><img src="../assets/user.png" alt="fotoperfil" id="picuser"></a>
+        <h3>USERNAME</h3>
+        <a href="./index.html">
+            <img src="../assets/exit.png" id="exituser">
+        </a>
+    </div>
+    <div class="conteiner">
+        <div id="banner">
+            <img src="../assets/userwhite.png" alt="fotoperfil">
+        </div>
+        <div id="profilebackground">
+            <h2 id="profileusername">Username (elu/delu)</h2>
+            <div id="empresa">
+                <img src="../assets/Icone_empresa.png" alt="incone empresa">
+                <h4>Nome da empresa</h4>
+            </div>
+            <div id="email">
+                <img src="../assets/Icone_email.png" alt="incone icone email">
+                <h4>exemplo@cjr.edu.br</h4>
+            </div>
+            <div id = "edit-and-create">
+                <button id = "publicarPost">Criar Post</button>
+                <a href="./tela_editar_perfil.html"><button id="perfiledit">Editar Perfil</button></a>
+            </div>
+        </div>
+        <div id="feedbackground">
+            <h2 id="publi">Publicações:</h2>
+            <div id="postbackground">
+                <img src="../assets/user.png" alt="imagem de perfil" id="postprofilepic">
+                <h2 id="username">Username</h2>
+                <div id="post text">
+                    <p id="texto1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, ipsa ullam sapiente expedita in omnis magnam odio itaque animi totam! Accusantium corporis voluptate ullam, similique inventore sed quidem aspernatur laboriosam!</p>
+                </div>
+                <div id="commentbar">
+                    <button id="Comentarios">Exibir Comentarios</button>
+                    <div>
+                        xx/xx/xx
+                    </div>
+                </div>
+            </div>
+
+            <div id="postbackground">
+                <img src="../assets/user.png" alt="imagem de perfil" id="postprofilepic">
+                <h2 id="username">Username</h2>
+                <div id="post text">
+                    <p id="texto1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, ipsa ullam sapiente expedita in omnis magnam odio itaque animi totam! Accusantium corporis voluptate ullam, similique inventore sed quidem aspernatur laboriosam!</p>
+                </div>
+                <div id="commentbar">
+                    <button id="Comentarios">Exibir Comentarios</button>
+                    <div>
+                        xx/xx/xx
+                    </div>
+                </div>
+            </div>
+
+            <div id="postbackground">
+                <img src="../assets/user.png" alt="imagem de perfil" id="postprofilepic">
+                <h2 id="username">Username</h2>
+                <div id="post text">
+                    <p id="texto1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, ipsa ullam sapiente expedita in omnis magnam odio itaque animi totam! Accusantium corporis voluptate ullam, similique inventore sed quidem aspernatur laboriosam!</p>
+                </div>
+                <div id="commentbar">
+                    <button id="Comentarios">Exibir Comentarios</button>
+                    <div>
+                        xx/xx/xx
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<style>
+    body{
+        overflow-x: hidden;
+        background-color:#ECF3FB;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        font-family: 'Questrial', sans-serif;
+    }
+
+    #backgroundball{
+        position: fixed;
+    width: 98%; 
+    height: 130%; 
+    background-color: #002E67; 
+    top:55%;
+    left:50%;
+    border-radius: 50%; 
+    z-index: -1; 
+    transform: translate(-50%, -50%)
+    }
+
+    #bar{ display: flex;
+        position: fixed;
+        width: 410px;
+        height: 48px;
+        background-color: #73C04A;
+        top: 0;
+        margin-left: 1130px;
+        display: flex;
+    }
+    #bar img{
+        height: 36px;
+    }
+    #userprofile{
+        background-color: #73C04A;
+        border: #73C04A;
+        padding: 10px;
+        cursor: pointer;
+        color: #ECF3FB;
+        width: 100px;
+        text-align: left;
+        font-family: 'Questrial', sans-serif;
+    }
+    #logout{
+        position: fixed;
+        right: 10px;
+        background-color: #ECF3FB;
+        width: 70px;
+        padding: 10px;
+        cursor: pointer;
+        border: #ECF3FB;
+        font-family: 'Questrial', sans-serif;
+    }
+    .conteiner{
+        margin: 50px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    #banner{
+        background-color: #234A7B;
+        width: 600px;
+    }
+    #banner img{
+        background-color:#73C04A;
+        position: relative;
+        top: 50px;
+        left: 20px;
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+    }
+    #profilebackground{
+        display: flex;
+        flex-direction: column;
+        background-color: #EEF1F8;
+        width: 600px;
+        height: 200px;
+        border-bottom: 2px;
+        text-align: left;
+        justify-content: center;
+        font-family: 'Questrial', sans-serif;
+    }
+    #feedbackground{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        background-color: #EEF1F8;
+        width: 600px;
+        font-family: 'Questrial', sans-serif;
+    }
+    #postbackground{ 
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 10px;
+        background-color: white;
+        margin: 10px;
+        padding: 0px;
+        font-family: 'Questrial', sans-serif;
+    }
+    #postbackground img{
+        position: relative;
+        top: 5px;
+        left: 5px;
+        height: 45px;
+    }
+    #texto1{
+        margin: 10px;
+        font-family: 'Questrial', sans-serif;
+    }
+    #commentbar{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        background-color: #73C04A;
+        padding: 5px;
+        font-family: 'Questrial', sans-serif;
+    }
+    #Comentarios{
+        color: white;
+        text-align: left;
+        background-color: #73C04A;
+        border: #73C04A;
+        cursor: pointer;
+        width: 300px;
+        font-family: 'Questrial', sans-serif;
+    }
+    #publi{
+        margin-left: 20px;
+        border-bottom: 3px solid #002E67;
+        height: 30px;
+        width: 400px;
+        font-size: 28px;
+        font-family: 'Questrial', sans-serif;
+    }
+    #empresa{
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-family: 'Questrial', sans-serif;
+    }
+    #email{
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-family: 'Questrial', sans-serif;
+    }
+    #email img{
+        width: 20px;
+        height: 20px;
+    }
+    #empresa img{
+        width: 20px;
+        height: 20px;
+    }
+    #profileusername{
+        align-self:center;
+        margin-top: 55px;
+    }
+    #perfiledit, #publicarPost{
+        position: relative;
+        height: 30px;
+        width: 90px;
+        top: -98px;
+        left: 450px;
+        font-size: 15px;
+        bottom: 70px;
+        text-align: left;
+        cursor: pointer;
+        background-color: #73C04A;
+        color:#EEF1F8;
+        border: #73C04A;
+        font-family: 'Questrial', sans-serif;
+    }
+    h3 {
+        font-size: 15px;
+        margin-right: 50px;
+    }
+
+    #picuser {
+        width: 35px;
+        height: 35px;
+        margin-left: 65px;
+        margin-right: 15px;
+        margin-top: 8px;
+        border-radius: 50%;
+
+    }
+        
+    #exituser {
+        width: 35px;
+        height: 35px;
+        margin-left: 20px;
+        border-radius: 50%;
+        margin-top: 8px;
+    }
+
+    #edit-and-create {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+
+
+</style>
+</html>

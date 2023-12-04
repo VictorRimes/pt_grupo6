@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel= "icon" href="../assets/loguinho.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <title>Perfil do Usuário</title>
+</head>
+
+
+<body>
+    <div id="backgroundball"></div>
+    <div id=bar>
+        <a href="./Tela_de_cadastro_FINAL.html"><button id="cadastro">Criar Conta</button></a>
+        <a href="./login.html"><button id="login">Login</button></a>
+    </div>
+    <div class="conteiner">
+        <div id="banner">
+            <img src="../assets/userwhite.png" alt="fotoperfil">
+        </div>
+        <div id="profilebackground">
+            <h2 id="profileusername">Username (elu/delu)</h2>
+            <div id="empresa">
+                <img src="../assets/Icone_empresa.png" alt="icone-empresa">
+                <h4>Nome da empresa</h4>
+            </div>
+            <div id="email">
+                <img src="../assets/Icone_email.png" alt="icone-email">
+                <h4>exemplo@cjr.edu.br</h4>
+            </div>
+        </div>
+        <div id="feedbackground">
+            <h2 id="publi">Publicações:</h2>
+            <div id="postbackground">
+                <img src="../assets/user.png" alt="imagem de perfil" id="postprofilepic">
+                <h2 id="username">Username</h2>
+                <div id="post text">
+                    <p id="texto1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, ipsa ullam sapiente expedita in omnis magnam odio itaque animi totam! Accusantium corporis voluptate ullam, similique inventore sed quidem aspernatur laboriosam!</p>
+                </div>
+                <div id="commentbar">
+                    <a href="./comentariosdes.html"><button id="Comentarios">Exibir Comentarios</button></a>
+                    <div>
+                        xx/xx/xx
+                    </div>
+                </div>
+            </div>
+
+            <div id="postbackground">
+                <img src="../assets/user.png" alt="imagem de perfil" id="postprofilepic">
+                <h2 id="username">Username</h2>
+                <div id="post text">
+                    <p id="texto1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, ipsa ullam sapiente expedita in omnis magnam odio itaque animi totam! Accusantium corporis voluptate ullam, similique inventore sed quidem aspernatur laboriosam!</p>
+                </div>
+                <div id="commentbar">
+                    <a href="./comentariosdes.html"><button id="Comentarios">Exibir Comentarios</button></a>
+                    <div>
+                        xx/xx/xx
+                    </div>
+                </div>
+            </div>
+
+            <div id="postbackground">
+                <img src="../assets/user.png" alt="imagem de perfil" id="postprofilepic">
+                <h2 id="username">Username</h2>
+                <div id="post text">
+                    <p id="texto1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, ipsa ullam sapiente expedita in omnis magnam odio itaque animi totam! Accusantium corporis voluptate ullam, similique inventore sed quidem aspernatur laboriosam!</p>
+                </div>
+                <div id="commentbar">
+                    <a href="./comentariosdes.html"><button id="Comentarios">Exibir Comentarios</button></a>
+                    <div>
+                        xx/xx/xx
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+<style>
+    body{
+        overflow-x: hidden;
+        background-color:#ECF3FB;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        font-family: 'Questrial', sans-serif;
+    }
+
+
+    #backgroundball{
+        position: fixed;
+    width: 98%; 
+    height: 130%; 
+    background-color: #002E67; 
+    top:55%;
+    left:50%;
+    border-radius: 50%; 
+    z-index: -1; 
+    transform: translate(-50%, -50%)
+    }
+
+    #bar{ display: flex;
+        width: 410px;
+        height: 48px;
+        position: fixed;
+        right: 0;
+        top: 0px;
+        background-color:#73C04A;
+        justify-content:space-around;
+    }
+    #cadastro{
+        background-color: #73C04A;
+        border: #73C04A;
+        cursor: pointer;
+        color: #E1E8DD;
+        width: 100px;
+        font-family: 'Questrial', sans-serif;
+        font-size: 17px;
+        margin-top: 16px;
+    }
+    #login{
+        background-color: #ECF3FB;
+        width: 100px;
+        padding: 8px;
+        cursor: pointer;
+        border: #ECF3FB;
+        font-family: 'Questrial', sans-serif;
+        font-size: 17px;
+        margin-top: 8px;
+        color: #002e67;
+    }
+    .conteiner{
+        margin: 50px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+    #banner{
+        background-color: #234A7B;
+        width: 600px;
+    }
+    
+    #banner img{
+        background-color:#73C04A;
+        position: relative;
+        top: 50px;
+        left: 20px;
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+    }
+    #profilebackground{
+        display: flex;
+        flex-direction: column;
+        background-color: #EEF1F8;
+        width: 600px;
+        height: 200px;
+        border-bottom: 2px;
+        text-align: left;
+    }
+    #feedbackground{
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        background-color: #EEF1F8;
+        width: 600px;
+    }
+    #postbackground{ 
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 10px;
+        background-color: white;
+        margin: 10px;
+        padding: 0px;
+        
+    }
+    #postbackground img{
+        position: relative;
+        top: 5px;
+        left: 5px;
+        height: 45px;
+    }
+    #texto1{
+        margin: 10px;
+    }
+    #commentbar{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        background-color: #73C04A;
+        padding: 5px;
+    }
+    #Comentarios{
+        color: white;
+        text-align: left;
+        background-color: #73C04A;
+        border: #73C04A;
+        cursor: pointer;
+        width: 300px;
+        font-family: 'Questrial', sans-serif;
+    }
+    #publi{
+        margin-left: 20px;
+        border-bottom: 3px solid #002E67;
+        height: 30px;
+        width: 400px;
+        font-size: 28px;
+        font-family: 'Questrial', sans-serif;
+    }
+    #empresa{
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    #email{
+        margin-left: 10px;
+        display: flex;
+        align-items: center;
+        gap: 5px
+    }
+    #email img{
+        width: 20px;
+        height: 20px;
+    }
+    #empresa img{
+        width: 20px;
+        height: 20px;
+    }
+    #profileusername{
+        align-self:center
+    }
+    #postprofilepic {
+        margin-top: 10px;
+        margin-left: 8px;
+    }
+</style>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel= "icon" href="../assets/loguinho.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <title>Login</title>
+</head>
+<body>
+    <div class="tela">
+        <div>
+            <img src="../assets/Logo_CJR.png" alt="logo da CJR">
+        </div>
+        <div class="login">
+            <p>Login</p>
+            <form>
+                <input type="email" placeholder="Username">
+                <input type="password" placeholder="Senha">
+                <button>Entrar</button>
+            </form>
+            <a href="./Tela_de_cadastro_FINAL.html">Não possui conta?</a>
+            <a href="./recuperacao_senha.html">Esqueceu a senha?</a>
+        </div>
+    </div>
+    <style>
+
+        * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        }
+
+    .tela{
+        height: 100vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        color: white;
+    }
+
+    img {
+        width: 400px;
+    }
+
+    .login {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 700px;
+        width: 700px;
+        background-color: #002E67;
+        border-radius: 50%;
+        gap: 50px;
+        font-family: 'Questrial', sans-serif;
+    }
+
+    p {
+        font-size: 50px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input {
+        width: 300px;
+        height: 40px;
+        margin-bottom: 15px;
+        padding: 6px;
+        border-radius: 5px;
+        border: none;
+    }
+
+    button {
+        width: 150px;
+        height: 35px;
+        background-color: #73C04A;
+        border: none;
+        border-radius: 5px;
+        color: white;
+    }
+
+    button:hover {
+        background-color: #508533;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+        margin-top: -25px;
+    }
+    </style>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel= "icon" href="../assets/loguinho.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <title>Recuperar Senha</title>
+</head>
+
+
+<body>
+    <div id="backgroundball"></div>
+    <div id="bar">
+        <a href="./tela_perfil_logada.html"><img src="../assets/user.png" alt="fotoperfil" id="picuser"></a>
+        <h3>USERNAME</h3>
+        <a href="./index.html">
+            <img src="../assets/exit.png" id="exituser">
+        </a>
+    </div>
+    <div class="container">
+        <img src="../assets/Logo_CJR.png" alt="logo cjr" id = "cJr">
+        <div id="cabecalho">
+            <H1 id = "frase">Bem vindo de volta, Username! Escolha aqui a sua nova senha.</H1>
+        </div>
+        <div id="inputs">
+            <input type="text" placeholder="Email" id="email" class="txtinp">
+            <input type="password" placeholder="Nova Senha" id="senha" class="txtinp">
+            <input type="password" placeholder="Confirmar Nova Senha" id="confirm" class="txtinp">
+            <button id="submit">Confirmar</button>
+        </div>
+
+    </div>
+   
+
+
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        overflow-x: hidden;
+        background-color:#ECF3FB;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        font-family: 'Questrial', sans-serif;
+    }
+
+    #backgroundball{
+        position: fixed;
+        width: 98%; 
+        height: 130%; 
+        background-color: #002E67; 
+        top:55%;
+        left:50%;
+        border-radius: 50%; 
+        z-index: -1; 
+        transform: translate(-50%, -50%)
+        }
+
+    #bar{ display: flex;
+        width: 410px;
+        height: 48px;
+        position: fixed;
+        right: 0;
+        top: 0;
+        background-color:#73C04A;
+        justify-content:left;
+        font-family: 'Questrial', sans-serif;
+    }
+    #bar img{
+        height: 36px;
+    }
+    #userprofile{
+        background-color: #73C04A;
+        border: #73C04A;
+        padding: 10px;
+        cursor: pointer;
+        color: #ECF3FB;
+        width: 100px;
+        text-align: left;
+        font-family: 'Questrial', sans-serif;
+    }
+    #logout{
+        position: fixed;
+        right: 10px;
+        background-color: #ECF3FB;
+        width: 70px;
+        padding: 10px;
+        cursor: pointer;
+        border: #ECF3FB;
+        font-family: 'Questrial', sans-serif;
+    }
+    .container{
+        margin-top: 130px;
+        padding: 20px;
+        width: 800px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        background-color: #EEF1F8;
+        gap: 50px;
+   }
+   .container img{
+        height: 150px;
+   }
+   
+   #inputs{
+        margin-top:-30px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+   }
+   .txtinp{
+        padding: 10px;
+        width: 300px;
+        color: white;
+        background: #002E67;
+        border-color: #002E67;
+        font-family: 'Questrial', sans-serif;
+   }
+   #submit{
+        padding: 7px;
+        border-color: #73C04A;
+        background-color: #73C04A;
+        color: white;
+        font-family: 'Questrial', sans-serif;
+        margin-left: 115px;
+   }
+   ::placeholder{
+    color: white;
+   }
+
+   #frase {
+    margin-top: -180px;
+    margin-left: 300px;
+    color: #002E67;
+    border-bottom: 5px solid #73C04A;
+    font-family: 'Questrial', sans-serif;
+    padding: 15px;
+   }
+   #cJr {
+    margin-right: 500px;
+    margin-top: 20px;
+   }
+</style>
+
+
+</html>
