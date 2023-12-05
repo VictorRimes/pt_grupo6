@@ -7,6 +7,9 @@
     <link rel= "icon" href="../assets/loguinho.png">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/simplemde@1.11.2/dist/simplemde.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simplemde@1.11.2/dist/simplemde.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/markdown-it@13.0.2/dist/markdown-it.min.js"></script>
     <title>Perfil do Usuário</title>
 </head>
 
@@ -49,7 +52,7 @@
                 </div>
                 <div id="commentbar">
                     <button id="Comentarios">Exibir Comentarios</button>
-                    <div>
+                    <div id = "postdate">
                         xx/xx/xx
                     </div>
                 </div>
@@ -86,7 +89,149 @@
     </div>
 </body>
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const createPostButton = document.querySelector("#publicarPost");
+        const feedContainer = document.querySelector("#feedbackground");
 
+        const openModal = () => {
+            const modalContent = document.createElement("div");
+            modalContent.innerHTML = `
+                <textarea id="markdownEditor"></textarea>
+                <div class="botoes">
+                    <button id="cancelPost" class="closeModal">Cancelar</button>
+                    <button id="savePost" class = "publishModal">Publicar</button>
+                </div>
+            `;
+
+            const modal = document.createElement("div");
+            modal.classList.add("modal");
+            modal.appendChild(modalContent);
+            document.body.appendChild(modal);
+
+            const simplemde = new SimpleMDE({
+                element: document.getElementById("markdownEditor"),
+                spellChecker: false,
+            });
+
+            const savePostButton = document.getElementById("savePost");
+            const cancelPostButton = document.getElementById("cancelPost");
+
+            savePostButton.addEventListener("click", () => {
+                const markdownContent = simplemde.value();
+                const htmlContent = window.markdownit().render(markdownContent);
+
+                addPostToFeed(htmlContent);
+
+                document.body.removeChild(modal);
+            });
+
+            cancelPostButton.addEventListener("click", () => {
+                document.body.removeChild(modal);
+            });
+        };
+
+        const addPostToFeed = (htmlContent) => {
+            const postContainer = document.createElement("div");
+            postContainer.classList.add("postbackground");
+
+            postContainer.innerHTML = `
+                <div id="postbackground">
+                    <img src="../assets/user.png" alt="imagem de perfil" id="postprofilepic">
+                    <h2 id="username">Username</h2>
+                    <img src = "../assets/pen.png" id = "edit2">
+                    <img src = "../assets/trash.png" id="trash2" class="removeButton">
+                    <div id="post text">
+                        <p id="texto1">${htmlContent}</p>
+                    </div>
+                    <div id="commentbar">
+                        <a href="./comentarioslog.html"><button id="Comentarios">Exibir Comentarios</button></a>
+                        <div id = "postdate">
+                            ${getCurrentDate()}
+                        </div>
+                    </div>
+                </div>
+
+            `;
+            feedContainer.insertBefore(postContainer, feedContainer.querySelector("#publi").nextSibling);
+            addEventListenersToPost(postContainer);
+        };
+
+        const getCurrentDate = () => {
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+
+            return `${day}/${month}/${year} ${hours}:${minutes}`;
+        };
+
+        const addEventListenersToPost = (postContainer) => {
+            const editButton = postContainer.querySelector("#edit2");
+            const removeButton = postContainer.querySelector(".removeButton");
+
+            editButton.addEventListener("click", () => {
+                handleEditPostClick(postContainer);
+            });
+
+            removeButton.addEventListener("click", () => {
+                handleRemovePostClick(postContainer);
+            });
+        };
+
+        function handleEditPostClick(box) {
+                const modalContent = document.createElement("div");
+                modalContent.innerHTML = `
+                    <textarea id="editPostEditor">${box.querySelector('p').innerHTML}</textarea>
+                    <div class="botoes">
+                        <button id="cancelEditPost" class="closeModal">Cancelar</button>
+                        <button id="submitEditPost" class ="publishModal">Salvar</button>
+                    </div>
+                `;
+
+                const modal = document.createElement("div");
+                modal.classList.add("modal");
+                modal.appendChild(modalContent);
+                document.body.appendChild(modal);
+
+                const editPostEditor = document.getElementById("editPostEditor");
+                const cancelEditPostButton = document.getElementById("cancelEditPost");
+                const submitEditPostButton = document.getElementById("submitEditPost");
+
+                const simplemde = new SimpleMDE({
+                    element: editPostEditor,
+                    spellChecker: false,
+                });
+
+                submitEditPostButton.addEventListener("click", () => {
+                    const editedContent = simplemde.value();
+                    box.querySelector('p').innerHTML = editedContent;
+
+                    document.body.removeChild(modal);
+                });
+
+                cancelEditPostButton.addEventListener("click", () => {
+                    document.body.removeChild(modal);
+                });
+            }
+
+        createPostButton.addEventListener("click", openModal);
+        const existingPosts = document.querySelectorAll(".postbackground");
+        existingPosts.forEach(postContainer => {
+            addEventListenersToPost(postContainer);
+        });
+        function handleRemovePostClick(box) {
+            const postContent = box.querySelector('p').innerHTML;
+            const userConfirmation = window.confirm(`Tem certeza que deseja remover o post?`);
+
+            if (userConfirmation) {
+                box.remove();
+            }
+}
+        });
+</script>
 <style>
     body{
         overflow-x: hidden;
@@ -99,15 +244,15 @@
 
     #backgroundball{
         position: fixed;
-    width: 98%; 
-    height: 130%; 
-    background-color: #002E67; 
-    top:55%;
-    left:50%;
-    border-radius: 50%; 
-    z-index: -1; 
-    transform: translate(-50%, -50%)
-    }
+        width: 98%; 
+        height: 130%; 
+        background-color: #002E67; 
+        top:55%;
+        left:50%;
+        border-radius: 50%; 
+        z-index: -1; 
+        transform: translate(-50%, -50%)
+        }
 
     #bar{ display: flex;
         position: fixed;
@@ -191,13 +336,16 @@
     }
     #postbackground img{
         position: relative;
-        top: 5px;
+        top: 6px;
         left: 5px;
         height: 45px;
     }
+
     #texto1{
         margin: 10px;
         font-family: 'Questrial', sans-serif;
+        word-wrap: break-word;
+        left: 5px;
     }
     #commentbar{
         display: flex;
@@ -293,6 +441,65 @@
         flex-direction: column;
         gap: 10px;
     }
+
+    .modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    height: 400px;
+    width: 500px;
+    padding: 50px;
+    border-radius: 2%;
+    max-height: 80%; 
+    overflow-y: auto; 
+    
+}
+
+    #cancelPost, #cancelComment, #cancelEdit, #cancelEditPost {
+        background-color: white;
+        margin-right: 5px;
+        color: #73C04A;
+    }
+
+    #savePost, #submitComment, #submitEdit, #submitEditPost {
+        margin-left: 30px;
+    }
+
+    .botoes {
+        display: flex;
+    }
+
+    #trash2 {
+        margin-left: 250px;
+        margin-top: 20px;
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+        
+    }
+
+    #edit2 {
+        cursor: pointer;
+        width: 25px;
+        height: 25px;
+    }
+
+
+    .closeModal, .publishModal{
+    background-color: #73C04A;
+    margin-left: 65%;
+    font-size: 15px;
+    height: 40px;
+    width: 85px;
+    font-family: 'Questrial', sans-serif;
+    color: #E1E8DD;
+    border: none;
+    cursor: pointer;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
 
 
 
