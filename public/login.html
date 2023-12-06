@@ -17,10 +17,10 @@
         <div class="login">
             <p>Login</p>
             <form>
-                <input type="email" placeholder="Username">
-                <input type="password" placeholder="Senha">
-                <a href="./feedlogado.html"><button>Entrar</button></a>
+                <input type="email" id = "email" placeholder="Username">
+                <input type="password" id = "password" placeholder="Senha">
             </form>
+            <a href="./feedlogado.html"><button id = "entrar">Entrar</button></a>
             <a href="./Tela_de_cadastro_FINAL.html">Não possui conta?</a>
             <a href="./recuperacao_senha.html">Esqueceu a senha?</a>
         </div>
@@ -32,6 +32,16 @@
         margin: 0;
         padding: 0;
         }
+
+        #email {
+            font-family: 'Questrial', sans-serif;
+        }
+
+        #password {
+            font-family: 'Questrial', sans-serif;
+        }
+    
+
 
     .tela{
         height: 100vh;
@@ -67,6 +77,13 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
+    }
+
+    #entrar {
+        margin-top: -10px;
+        cursor: pointer;
+        font-family: 'Questrial', sans-serif;
     }
 
     input {
