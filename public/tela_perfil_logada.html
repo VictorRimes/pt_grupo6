@@ -47,7 +47,7 @@
             <div id="postbackground">
                 <img src="../assets/user.png" alt="imagem de perfil" id="postprofilepic">
                 <h2 id="username">Username</h2>
-                <div id="post text">
+                <div id="posttext">
                     <p id="texto1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, ipsa ullam sapiente expedita in omnis magnam odio itaque animi totam! Accusantium corporis voluptate ullam, similique inventore sed quidem aspernatur laboriosam!</p>
                 </div>
                 <div id="commentbar">
@@ -61,7 +61,7 @@
             <div id="postbackground">
                 <img src="../assets/user.png" alt="imagem de perfil" id="postprofilepic">
                 <h2 id="username">Username</h2>
-                <div id="post text">
+                <div id="posttext">
                     <p id="texto1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt, ipsa ullam sapiente expedita in omnis magnam odio itaque animi totam! Accusantium corporis voluptate ullam, similique inventore sed quidem aspernatur laboriosam!</p>
                 </div>
                 <div id="commentbar">
@@ -238,6 +238,7 @@ const handleEditPostClick = (box) => {
 
 </script>
 <style>
+
     body{
         overflow-x: hidden;
         background-color:#ECF3FB;
@@ -268,7 +269,7 @@ const handleEditPostClick = (box) => {
         margin-left: 1130px;
         display: flex;
     }
-    #bar img{
+    #picuser, #exituser{
         height: 36px;
     }
     #userprofile{
@@ -299,7 +300,10 @@ const handleEditPostClick = (box) => {
     }
 
     #posttext {
-        word-wrap: break-word;
+        margin-right: auto;
+        margin-left: auto;
+        overflow-wrap: break-word;
+        max-width: 95%;
     }
     #banner{
         background-color: #234A7B;
@@ -343,17 +347,17 @@ const handleEditPostClick = (box) => {
         padding: 0px;
         font-family: 'Questrial', sans-serif;
     }
-    #postbackground img{
+    #postprofilepic{
         position: relative;
-        top: 6px;
-        left: 5px;
+        top: 10px;
+        left: 10px;
         height: 45px;
     }
 
     #texto1{
-        margin: 10px;
         font-family: 'Questrial', sans-serif;
-        left: 5px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
     #commentbar{
         display: flex;
@@ -480,7 +484,7 @@ const handleEditPostClick = (box) => {
     }
 
     #trash2 {
-        margin-left: 250px;
+        margin-left: 310px;
         margin-top: 20px;
         cursor: pointer;
         width: 25px;
@@ -509,9 +513,11 @@ const handleEditPostClick = (box) => {
     margin-bottom: 0px;
     }
 
-    p {
-        word-wrap: break-word;
+    #username {
+        margin-left: 10px;
+        font-size: 20px;
     }
+
 
 
 
