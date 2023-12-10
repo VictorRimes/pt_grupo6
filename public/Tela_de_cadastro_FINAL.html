@@ -41,6 +41,48 @@
     inputFile.onchange = function(){
         profilePic.src = URL.createObjectURL(inputFile.files[0]);
     }
+
+    async function criarPerfil() {
+        // Obter os valores dos campos
+        let username = document.getElementById("username").value;
+        let email = document.getElementById("email").value;
+        let genero = document.getElementById("genero").value;
+        let senha = document.getElementById("senha").value;
+        let confirm = document.getElementById("confirm").value;
+
+        // Validar os campos, por exemplo, verificar se a senha e a confirmação de senha coincidem
+
+        // Criar um objeto com os dados do usuário
+        let userData = {
+            profile_picture: profilePic,
+            username: username,
+            email: email,
+            gender: genero,
+            job_title: "Programador(a)",
+            password: senha
+            // Adicione outros campos conforme necessário
+        };
+
+        try {
+            const response = await fetch("http://localhost:3000/criar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(userData),
+            });
+
+            if (response.ok) {
+                // O perfil foi criado com sucesso
+                window.location.href = "./feedlogado.html"; // Redirecionar para a página de feed logado
+            } else {
+                // Exibir mensagem de erro, se necessário
+                console.error("Erro ao criar o perfil:", response.statusText);
+            }
+        } catch (error) {
+            console.error("Erro ao criar o perfil:", error.message);
+        }
+    }
 </script>
 
 <style>

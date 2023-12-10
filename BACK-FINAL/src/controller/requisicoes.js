@@ -3,7 +3,7 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 const criarUsuario = async (req, res) => {
-    const { profile_picture, username, email, gender, job_title, password, admin, created_at, updated_at } = req.body;
+    const { profile_picture, username, email, gender, job_title, password } = req.body;
 
     if (!username || !email || !gender || !password) {
         return res.status(400).json('mensagem: Todos os campos são obrigatorios.');
@@ -20,16 +20,16 @@ const criarUsuario = async (req, res) => {
                     create: {
                         name: job_title,
                         team: 'teste',
-                        created_at: '2023-12-02T02:24:00.000Z'
+                        created_at: new Date()
                     },
                 },
                 password,
-                admin,
-                created_at,
-                updated_at
+                admin: false,
+                created_at: new Date(),
+                updated_at: new Date()
             }
         })
-        if (ler) {
+        if (novo) {
             return res.status(201).json(novo)
         } else {
             return res.status(404).json({ error: "Usuario não foi criado" })
