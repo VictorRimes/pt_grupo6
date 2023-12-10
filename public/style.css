@@ -97,6 +97,14 @@ p {
     margin-top: 10px;
 }
 
+p img {
+    width: 560px;
+    height: 350px;
+    max-width: 95%;
+    align-content: center;
+    left: 50%;
+}
+
 .usercontainer {
     display: flex;
     align-items: center;
