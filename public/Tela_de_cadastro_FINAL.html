@@ -25,6 +25,7 @@
                 <input type="text" id="username" placeholder="Nome de Usuário"><br><br>
                 <input type="email" id="email" placeholder="Email"><br><br>
                 <input type="text" id="genero" placeholder="Gênero"><br><br>
+                <input type="text" id="cargo" placeholder="Cargo"><br><br>
                 <input type="password" id="senha" placeholder="Senha"><br><br>
                 <input type="password" id="confirm" placeholder="Confirme a senha"><br><br>
                 <a href="./feedlogado.html"><button type="button" id="enviar"> Criar Conta </button></a>
@@ -47,6 +48,7 @@
         let username = document.getElementById("username").value;
         let email = document.getElementById("email").value;
         let genero = document.getElementById("genero").value;
+        let cargo = document.getElementById("cargo").value;
         let senha = document.getElementById("senha").value;
         let confirm = document.getElementById("confirm").value;
 
@@ -58,7 +60,7 @@
             username: username,
             email: email,
             gender: genero,
-            job_title: "Programador(a)",
+            job_title: cargo,
             password: senha
             // Adicione outros campos conforme necessário
         };
@@ -165,6 +167,12 @@
         font-family: 'Questrial', sans-serif;
     }
     #genero  {
+        padding: 10px;
+        width: 300px;
+        font-family: 'Questrial', sans-serif;
+    }
+
+    #cargo {
         padding: 10px;
         width: 300px;
         font-family: 'Questrial', sans-serif;
