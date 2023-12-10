@@ -3,6 +3,7 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 const criarUsuario = async (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
     const { profile_picture, username, email, gender, job_title, password } = req.body;
 
     if (!username || !email || !gender || !password) {

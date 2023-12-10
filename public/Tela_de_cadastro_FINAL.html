@@ -28,7 +28,7 @@
                 <input type="text" id="cargo" placeholder="Cargo"><br><br>
                 <input type="password" id="senha" placeholder="Senha"><br><br>
                 <input type="password" id="confirm" placeholder="Confirme a senha"><br><br>
-                <a href="./feedlogado.html"><button type="button" id="enviar"> Criar Conta </button></a>
+                <button type="button" id="enviar" onclick="criarPerfil()">Criar Conta</button>
                 <a href="./login.html"><button type="button" id="redirect"> Login </button></a>
             </div>
         </div>
@@ -65,6 +65,8 @@
             // Adicione outros campos conforme necessário
         };
 
+        console.log(userData);
+
         try {
             const response = await fetch("http://localhost:3000/criar", {
                 method: "POST",
@@ -73,6 +75,8 @@
                 },
                 body: JSON.stringify(userData),
             });
+
+        console.log(response.body);
 
             if (response.ok) {
                 // O perfil foi criado com sucesso
